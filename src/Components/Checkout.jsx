@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 
-const Checkout = () => {
+const CheckOut = () => {
   
   const cart = useSelector((state) => state.cart.cart);
 
@@ -48,4 +48,4 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+export default CheckOut;
