@@ -29,7 +29,7 @@ const CartRow = ({obj}) => {
       <br />
     </td>
     <td> $ { (price * quantity).toFixed(2) }</td>
-    <td> <span onClick={()=> dispatch(QuantityIncrease(id))}>🔼</span> {quantity} <span onClick={()=> dispatch(QuantityDecrease(id))}>🔽</span> </td>
+    <td> <span className='cursor-pointer' onClick={()=> dispatch(QuantityIncrease(id))}>🔼</span> {quantity} <span className='cursor-pointer' onClick={()=> dispatch(QuantityDecrease(id))}>🔽</span> </td>
     <th>
       <button className="btn btn-outline btn-error" onClick={()=> dispatch(removeCart(id))} >Remove</button>
     </th>

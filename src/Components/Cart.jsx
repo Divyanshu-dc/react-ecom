@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import  { useContext } from "react";
 import CartRow from "./CartRow";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -26,7 +26,7 @@ const Cart = () => {
           className="w-1/2 h-1/2"
         />
         <h2 className="text-3xl font-semibold mt-4">Cart is Empty, Happy Shopping!</h2>
-        <Link  to={"/"}><button className="btn btn-primary mt-4">Lets' Go!!</button></Link>
+        <Link  to={"/"}><button className="btn btn-primary mt-4">Lets&apos; Go!!</button></Link>
       </div>
     ) : (
       <div className="overflow-x-auto">

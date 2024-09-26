@@ -16,6 +16,7 @@ import ContextAPI from "./Components/ContextAPI.jsx";
 
 import Food from "./Components/Food.jsx";
 import Checkout from "./Components/Checkout.jsx";
+import Login from "./Components/Login.jsx";
 // import Checkout from "../Components/Checkout.jsx";
 
 const About = lazy(() => import("./Components/About.jsx"));
@@ -57,7 +58,13 @@ const AppRouter = createBrowserRouter([
         element: <ProductPage></ProductPage>,
       },
     ],
+    
     errorElement: <ErrorPage></ErrorPage>,
+    
+  },
+  {
+    path: "/login",
+    element: <Login></Login>,
   },
 ]);
 

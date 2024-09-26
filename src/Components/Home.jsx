@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import Card from "./Card";
 import Shimmer from "./Shimmer";
 import { Theme } from "./ContextAPI";
@@ -6,7 +6,7 @@ import AddedToCart from "./AddedToCart";
 import { useSelector } from "react-redux";
 
 const Home = () => {
-  let { theme, setTheme } = useContext(Theme);
+  let { theme} = useContext(Theme);
   let AddedCart = AddedToCart(Card);
   let cartItems = useSelector((store)=> store.cart.cart);
 
@@ -34,7 +34,7 @@ const Home = () => {
     setQuery("");
   };
   let getData = async () => {
-    let data = await fetch("https://dummyjson.com/products");
+    let data = await fetch("https://dummyjson.com/products?limit=40");
     let productsData = await data.json();
     let products = productsData.products;
     setProducts(products);
@@ -60,7 +60,10 @@ const Home = () => {
   return (
     <>
       <div className={theme == "light" ? lightTheme : darkTheme}>
-        <div className="flex justify-around items-center w-full h-16">
+      <div>
+          <img className="h-[60vh] w-full" src="/image2.jpg" />
+        </div>
+        <div className="flex justify-around items-center mt-2 w-full h-16">
           <button
             onClick={topRatedProduct}
             className="btn btn-active btn-primary"
@@ -85,7 +88,7 @@ const Home = () => {
               className="input input-bordered bg-transparent w-full max-w-xs"
               placeholder="Text Here"
             ></input>
-            <button className="btn btn-outline btn-info ml-2" onClick={handleSearch}>
+            <button className="btn btn-outline btn-primary ml-2" onClick={handleSearch}>
               {" "}
               Search
             </button>
@@ -107,6 +110,7 @@ const Home = () => {
             Beauty
           </button>
         </div>
+        
         <div className="flex justify-around flex-wrap">
           {productsData == null ? (
             <Shimmer></Shimmer>
